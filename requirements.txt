@@ -4,6 +4,7 @@ pandas
 numpy
 matplotlib
 jupyter
+openpyxl
 
 evidently
 black

@@ -25,7 +25,7 @@ deployments:
   description: null
   schedule: {}
   flow_name: null
-  entrypoint: src/train.py:main
+  entrypoint: src/orchestrate.py:main_flow
   parameters: {}
   work_pool:
     name: without_monitoring_pool

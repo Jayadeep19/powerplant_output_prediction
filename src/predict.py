@@ -2,14 +2,13 @@ import pandas
 import pickle
 from pathlib import Path
 
-import mlflow
-import mlflow.sklearn
 from mlflow.tracking import MlflowClient
 from sklearn.metrics import root_mean_squared_error
+from prefect import flow
 
 import variables as var
 
-
+@flow(name = "predicting using model")
 def predict(mlflow_client: MlflowClient, data):
 
     #client = MlflowClient(tracking_uri=var.MLFLOW_TRACKING_URI)
@@ -46,6 +45,7 @@ def predict(mlflow_client: MlflowClient, data):
     print(f"rmse during testing is: {rmse}")
 
     #print(predictions)
+    return predictions
 
 
 if __name__ == "__main__":

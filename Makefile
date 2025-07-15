@@ -14,10 +14,11 @@ mlflow:
 prefect:
 	@echo 'Running prefect server'
 	pipenv run prefect server start
-	pipenv run prefect config set PREFECT_API_URL=http://127.0.0.1:4200/api
+	
 
 deployment:
 	@echo 'Deploying workflow using pool with prefect and yaml file'
+	pipenv run prefect config set PREFECT_API_URL=http://127.0.0.1:4200/api
 	pipenv run prefect work-pool create --type process without_monitoring_pool
 	pipenv run prefect deploy --name train_output_predictor
 	pipenv run prefect worker start --pool 'without_monitoring_pool'
@@ -39,6 +40,7 @@ reset:
 	rm -rf artifacts_local
 	rm -rf backend.db
 	pipenv --rm
+	rm -rf .venv
  
 
 

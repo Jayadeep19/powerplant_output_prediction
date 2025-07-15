@@ -2,7 +2,7 @@
 
 import mlflow
 from mlflow.entities import ViewType
-from prefect import task, flow
+from prefect import task
 
 import variables as var
 

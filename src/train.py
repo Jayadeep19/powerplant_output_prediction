@@ -87,6 +87,8 @@ def main():
     #get the runid of the model and register the model to model registry
     register_model(mlflow_client)
 
+    return mlflow_client, X_test, y_test
+
     
 
 

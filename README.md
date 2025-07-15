@@ -11,7 +11,7 @@ In this project the aim is to predict the energy output of the powerplant. The f
 
 ## Setup and Usage
 ### 1. Making environment
-- To prepare the environment run: __make env_setup__ 
+- To prepare the environment run: __make env_setup__ (_python3.11_ is required for successful installation)
     ```
     env_setup:
         @echo 'Building python environment for the project...'

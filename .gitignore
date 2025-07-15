@@ -1,3 +1,7 @@
 
+#ignore mlruns folder
+mlruns/
+#ignore db files
+*.db
 #dont track data folder
 data/

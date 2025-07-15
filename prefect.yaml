@@ -13,9 +13,14 @@ build: null
 push: null
 
 # pull section allows you to provide instructions for cloning this project in remote locations
+# pull:
+# - prefect.deployments.steps.set_working_directory:
+#     directory: /home/jdeep/mlops-zoomcamp/powerplant_output_prediction
 pull:
-- prefect.deployments.steps.set_working_directory:
-    directory: /home/jdeep/mlops-zoomcamp/powerplant_output_prediction
+- prefect.deployments.steps.git_clone:
+    repository: https://github.com/Jayadeep19/powerplant_output_prediction.git
+    branch: main
+    access_token: null
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:

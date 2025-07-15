@@ -13,7 +13,7 @@ import variables as var
 def predict(mlflow_client: MlflowClient, data):
 
     #client = MlflowClient(tracking_uri=var.MLFLOW_TRACKING_URI)
-    models = client.search_registered_models(filter_string=f"name = '{var.MLFLOW_MODEL_NAME}'")
+    models = mlflow_client.search_registered_models(filter_string=f"name = '{var.MLFLOW_MODEL_NAME}'")
 
     (run_id, model_source) = [(model.latest_versions[0].run_id, model.latest_versions[0].source) for model in models][0]
 
@@ -45,7 +45,7 @@ def predict(mlflow_client: MlflowClient, data):
     rmse = root_mean_squared_error(predictions, test_df_y)
     print(f"rmse during testing is: {rmse}")
 
-    print(predictions)
+    #print(predictions)
 
 
 if __name__ == "__main__":

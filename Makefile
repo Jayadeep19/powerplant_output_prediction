@@ -23,4 +23,23 @@ deployment:
 	pipenv run prefect worker start --pool 'without_monitoring_pool'
 	@echo 'Now run the deployment from gui'
 
+web_service:
+	@echo 'Preparing the model for webservice deployment'
+	@echo 'open the terminal and run cd web_service'
+	PIPENV_IGNORE_VIRTUALENVS=1 pipenv install python=3.11
+	PIPENV_IGNORE_VIRTUALENVS=1 pipenv shell
+	pipenv run python predict.py
+	@echo 'Now open another terminal and run test.py'
+
+reset:
+	@echo this cleans the entire project
+	rm -rf __pycache__
+	rm -rf data
+	rm -rf mlruns
+	rm -rf artifacts_local
+	rm -rf backend.db
+	pipenv --rm
+ 
+
+
 

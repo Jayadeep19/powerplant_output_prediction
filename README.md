@@ -14,9 +14,9 @@
     ```
 
 ### 2. Start tracking server using mlflow
-- For mlflow: __make mlflow run__  
+- For mlflow: __make mlflow__  
     ```
-    mlflow run:
+    mlflow:
         @echo 'Running mlflow server'
         mlflow server --backend-store-uri sqlite:///backend.db --default-artifact-root ./artifacts_local 
     ```

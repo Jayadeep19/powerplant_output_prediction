@@ -1,6 +1,13 @@
 # Power plant Output Prediction
-- This project is based on the dataset by [UCIML](https://archive.ics.uci.edu/dataset/294/combined+cycle+power+plant) and [download](https://archive.ics.uci.edu/static/public/294/combined+cycle+power+plant.zip)
+- This project is based on the dataset by [UCIML](https://archive.ics.uci.edu/dataset/294/combined+cycle+power+plant) and [download](https://archive.ics.uci.edu/static/public/294/combined+cycle+power+plant.zip). The dataset has 9568 datapoints from a combined power plant. The dataset is clean and has no nan or empty data rows. There are 5 features which are;
 
+1. AT: Ambient temperature
+2. V: Exhaust vaccum
+3. AP: Ambient pressure
+4. RH: Relative humidity
+5. EP: Electrical energy output.
+
+In this project the aim is to predict the energy output of the powerplant. The first 4 are used to predict the Electrical energy output. Finally, the trained model is made available as a webservice so that it serves as a initial predictor for the powerplant workers to ensure if the power generation is following an expected path or if there is some deeper analysis to be made immediatly.
 
 ## Setup and Usage
 ### 1. Making environment
@@ -12,7 +19,7 @@
         pipenv install --python 3.11
         pipenv run python ./src/get_data.py
     ```
-
+    The dataset need not be downloaded manually. Running the above command will both create the virtual environment required with the dataset downloaded, unzipped and sorted to `data` folder
 ### 2. Start tracking server using mlflow
 - For mlflow: __make mlflow__  
     ```

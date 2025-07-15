@@ -8,8 +8,7 @@ env_setup:
 	pipenv run python ./src/get_data.py
 
 mlflow:
-	@echo 'Running mlflow server'
-	pipenv run prefect config set PREFECT_API_URL=http://127.0.0.1:4200/api 
+	@echo 'Running mlflow server' 
 	pipenv run mlflow server --backend-store-uri sqlite:///backend.db --default-artifact-root ./artifacts_local
 
 prefect:

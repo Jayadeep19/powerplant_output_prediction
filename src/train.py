@@ -19,6 +19,7 @@ def read_pkl(file_path):
     with open(file_path, "rb") as f_in:
         return pickle.load(f_in)
 
+@task(name = "prep data")
 def prep_data(df:pd.DataFrame, dv:DictVectorizer, fit_dv:bool = False):
     dicts = df[var.categorical_features + var.numerical_features].to_dict(orient='records')
     if fit_dv:

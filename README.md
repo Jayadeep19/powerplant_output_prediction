@@ -41,3 +41,28 @@
 	@echo 'Now run the deployment from gui'
     ```
     This will create a work pool named __without_monitoring_pool__ and deploy the workflow as __train_output_predictor__ as described in the prefect.yaml file. Later also starts a prefect worker for this workpool. Aow head over to the prefect server and press `quick run` on the deployment.
+
+### 5. Make the ml model available as webservice
+- Run: __make web_service__
+    ```
+    @echo 'Preparing the model for webservice deployment'
+	@echo 'open the terminal and run cd web_service'
+	PIPENV_IGNORE_VIRTUALENVS=1 pipenv install python=3.11
+	PIPENV_IGNORE_VIRTUALENVS=1 pipenv shell
+	pipenv run python predict.py
+	@echo 'Now open another terminal and run test.py
+    ```
+    Running the above command created a seperate virtual environment inside the project's virtual environment and installs all the dependencies. And also it uses flask to host the model and makes it available at http://0.0.0.0:9696. Now open another window and run test.py to send a request to the webpage to get a prediction.
+
+### 6. Clean the project
+- Run: ___make reset_
+    ```
+    @echo cleaning the project directory
+    rm -rf __pycache__
+	rm -rf data
+	rm -rf mlruns
+	rm -rf artifacts_local
+	rm -rf backend.db
+	pipenv --rm
+    ```
+    Running this command will clean the entire project directory and sets it to the former condition. Note: This also removes the __virtual_environment__ also

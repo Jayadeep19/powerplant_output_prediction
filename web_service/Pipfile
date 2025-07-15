@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+scikit-learn = "==1.7.0"
+pandas = "==2.3.1"
+numpy = "*"
+matplotlib = "*"
+jupyter = "*"
+evidently = "*"
+black = "*"
+isort = "*"
+pre-commit = "*"
+pytest = "*"
+prefect = "*"
+mlflow = "*"
+ipython = "*"
+ipykernel = "*"
+ucimlrepo = "*"
+openpyxl = "*"
+docker = "*"
+
+[dev-packages]
+requests = "*"
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.13"
